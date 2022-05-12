@@ -11,11 +11,11 @@ on:
         - staging
 
 jobs:
-  log-the-inputs:
+  test-input-variables:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "environment/$TFVARS.auto.tfvars"
+          echo "environment/${TFVARS}.auto.tfvars"
           
         env:
           TFVARS: ${{ github.event.inputs.tfvars }}
